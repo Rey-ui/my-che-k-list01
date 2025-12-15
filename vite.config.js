@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
 
       rollupOptions: {
-        input: glob.sync('./*.html'),
+        input: glob.sync('index.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
