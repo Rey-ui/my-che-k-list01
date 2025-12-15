@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
@@ -13,7 +14,8 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
 
       rollupOptions: {
-        input: glob.sync('index.html'),
+        // Абсолютные пути, чтобы Rollup видел файлы на сервере
+        input: glob.sync(resolve(__dirname, 'src/*.html')),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -25,6 +27,6 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [injectHTML(), FullReload([resolve(__dirname, 'src/**/**.html')])],
   };
 });
