@@ -1,23 +1,2 @@
-import{i as c,S as u}from"./assets/vendor-46aac873.js";(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const a of t.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&s(a)}).observe(document,{childList:!0,subtree:!0});function r(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=r(e);fetch(e.href,t)}})();const p="41917530-74216f8e6af2c90f64ec8c0b5",f="https://pixabay.com/api/",d=document.querySelector(".form-inline"),o=document.querySelector(".card-container");d.addEventListener("submit",y);function m(){o.innerHTML='<div class="loader"></div>'}function h(){const i=o.querySelector(".loader");i&&i.remove()}function y(i){i.preventDefault();const n=i.currentTarget,r=n.elements.picture.value.trim();if(r===""||r==null){c.error({title:"Error",message:"❌Sorry, there are no images matching your search query. Please, try again!"}),o.innerHTML="";return}m(),g(r).then(s=>{if(s.hits&&s.hits.length>0){const e=s.hits;let t="";for(const l of e)t+=v(l);o.innerHTML=t,new u(".card-container a",{captionsData:"alt",captionPosition:"bottom",captionDelay:250}).refresh()}else o.innerHTML="",c.error({title:"Error",message:"❌Sorry, there are no images matching your search query. Please, try again!"})}).finally(()=>{h(),n.reset()})}function g(i){const n=new URLSearchParams({key:p,q:i,image_type:"photo",orientation:"horizontal",safesearch:!0});return fetch(`${f}?${n}`).then(r=>{if(!r.ok)throw new Error(r.statusText);return r.json()})}function v({webformatURL:i,likes:n,views:r,comments:s,downloads:e,largeImageURL:t}){return`
-        <a href="${t}" class= "picture-link">
-            <img src = "${i}">
-            <div class= "picture-content">
-                <div class= "picture-text">
-                    <span class= "picture-title">Likes</span>
-                    <span class= "picture-sub-title">${n}</span>
-                </div>
-                <div class= "picture-text">
-                    <span class= "picture-title">Views</span>
-                    <span class= "picture-sub-title">${r}</span>
-                </div>
-                <div class= "picture-text">
-                    <span class= "picture-title">Comments</span>
-                    <span class= "picture-sub-title">${s}</span>
-                </div>
-                <div class= "picture-text">
-                    <span class= "picture-title">Downloads</span>
-                    <span class= "picture-sub-title">${e}</span>
-                </div>
-            </div>
-        </a>`}
+import{n as d}from"./assets/vendor-7e542916.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const i of e)if(i.type==="childList")for(const l of i.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&r(l)}).observe(document,{childList:!0,subtree:!0});function n(e){const i={};return e.integrity&&(i.integrity=e.integrity),e.referrerpolicy&&(i.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?i.credentials="include":e.crossorigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(e){if(e.ep)return;e.ep=!0;const i=n(e);fetch(e.href,i)}})();function m(s){return s.map(({id:t,taskValue:n,isActive:r})=>`<li id="${t}" class="item"><span class="item-text ${r?"":"finish"}">${n}</span><button type="button" class="item-btn">X</button></li>`).join("")}const p='<p class="alternative">No tasks</p>';function u(s,t){t.length!==0?s.innerHTML=m(t):s.innerHTML=p}function f(s,t){localStorage.setItem(s,JSON.stringify(t))}const a="tasks-list",c=document.querySelector(".list");let o=JSON.parse(localStorage.getItem(a))||[];function k(s){s.preventDefault();const t=s.currentTarget,n=t.elements.task.value,r={id:d(),taskValue:n,isActive:!0};o.push(r),f(a,o),u(c,o),t.reset()}function g(s){const t=s.target.closest(".item-btn");if(!t)return;const n=t.closest("li");o=o.filter(({id:e})=>e!==n.id),f(a,o),u(c,o)}function h(s){const t=s.target.closest(".item"),n=s.target.closest(".item-text");if(!n)return;const r=o.find(({id:e})=>e==t.id);r.isActive?(r.isActive=!1,n.classList.add("finish")):(n.classList.remove("finish"),r.isActive=!0),f(a,o)}u(c,o);const v=document.querySelector(".form");v.addEventListener("submit",k);c.addEventListener("click",g);c.addEventListener("click",h);
 //# sourceMappingURL=commonHelpers.js.map

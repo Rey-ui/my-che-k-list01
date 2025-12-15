@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vanilla App Template</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500&display=swap" rel="stylesheet" />
-  
-  <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-46aac873.js">
-  <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-eb6030bc.css">
-  <link rel="stylesheet" href="/goit-js-hw-11/assets/index-e253d9c1.css">
-</head>
-
-<body>
-  <form class="form-inline search-form">
-    <div class="form-group">
-      <input placeholder="Search images..." type="text" class="form-control" name="picture" />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>my-che-k-list</title>
+    <script type="module" crossorigin src="/my-che-k-list01/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/my-che-k-list01/assets/vendor-7e542916.js">
+    <link rel="stylesheet" href="/my-che-k-list01/assets/index-1bf5420c.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="" class="form">
+        <label class="label"
+          ><span class="label-text">Write down the task:</span
+          ><input type="text" placeholder="task" name="task" class="input"
+        /></label>
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <!-- <div class="statistics">
+        <span class="all-tasks">0</span><span class="completed-tasks">0</span
+        ><span class="inprogress-tasks">0</span>
+      </div> -->
+      <ul class="list"></ul>
     </div>
-
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
-
-  <div class="card-container"></div>
-
-  
-</body>
-
+    
+  </body>
 </html>
