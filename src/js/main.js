@@ -3,10 +3,10 @@ import {
   createNewTask,
   handleDeleteTask,
   handleFinishTask,
-} from "./modules/actions.js";
+} from './modules/actions.js';
 
-const formEl = document.querySelector(".form");
+const formEl = document.querySelector('.form');
 
-formEl.addEventListener("submit", createNewTask);
-listEl.addEventListener("click", handleDeleteTask);
-listEl.addEventListener("click", handleFinishTask);
+formEl.addEventListener('submit', createNewTask);
+listEl.addEventListener('click', handleDeleteTask);
+listEl.addEventListener('click', handleFinishTask);

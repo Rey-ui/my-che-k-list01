@@ -1,11 +1,11 @@
-@import url("./reset.css");
+@import url('./reset.css');
 html,
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   align-items: center;
   width: 100%;
 }
@@ -138,4 +138,42 @@ body {
 }
 .item-btn:hover {
   background-color: rgb(211, 176, 165);
+}
+.statistics {
+  padding: 24px;
+  background-color: rgb(233, 248, 243);
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100%;
+}
+.all-tasks {
+  font-weight: 600;
+}
+.tasks {
+  padding: 14px;
+  background-color: rgb(206, 245, 232);
+  border-radius: 20px;
+  max-width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  gap: 12px;
+}
+.all-tasks-count {
+}
+.completed-tasks {
+  font-weight: 600;
+}
+.completed-tasks-count {
+}
+.inprogress-tasks {
+  font-weight: 600;
+}
+.inprogress-tasks-count {
 }

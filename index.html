@@ -16,10 +16,19 @@
         /></label>
         <button type="submit" class="btn">Add</button>
       </form>
-      <!-- <div class="statistics">
-        <span class="all-tasks">0</span><span class="completed-tasks">0</span
-        ><span class="inprogress-tasks">0</span>
-      </div> -->
+      <div class="statistics">
+        <div class="all-tasks tasks">
+          All:<span class="all-tasks-count">0</span>
+        </div>
+        <div class="completed-tasks tasks">
+          Completed:
+          <span class="completed-tasks-count">0</span>
+        </div>
+        <div class="inprogress-tasks tasks">
+          Inprogress:
+          <span class="inprogress-tasks-count">0</span>
+        </div>
+      </div>
       <ul class="list"></ul>
     </div>
     <script type="module" src="./src/js/main.js"></script>
