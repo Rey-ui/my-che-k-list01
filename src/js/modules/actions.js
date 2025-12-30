@@ -10,7 +10,11 @@ let tasks = JSON.parse(localStorage.getItem(API_KEY)) || [];
 export function createNewTask(e) {
   e.preventDefault();
   const form = e.currentTarget;
-  const taskText = form.elements.task.value;
+  const taskText = form.elements.task.value.trim();
+  if (!taskText) {
+    alert('Enter text!');
+    return;
+  }
   const newTask = { id: nanoid(), taskValue: taskText, isActive: true };
   tasks.push(newTask);
   saveTasks(API_KEY, tasks);
